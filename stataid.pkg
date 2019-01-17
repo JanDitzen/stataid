@@ -1,0 +1,7 @@
+v 3
+d Obtaining and displaying information about running Stata instances under Microsoft Windows and closing instances.
+d Jan Ditzen, Heriot-Watt University
+d Distribution-Date:  20190115
+f stataid.ado
+f stataid.sthlp
+

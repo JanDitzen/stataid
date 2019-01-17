@@ -1,0 +1,4 @@
+v 3
+d Jan Ditzen, Heriot-Watt University, j.ditzen@hw.ac.uk, jan.ditzen.net
+p stataid Obtaining and displaying information about running Stata instances under Microsoft Windows and closing instances.
+

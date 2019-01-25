@@ -1,13 +1,11 @@
 # stataid 
-##  Obtaining and displaying information about running Stata instances and closing Stata instances under Microsoft Windows. 
-
-__Table of Contents__
+##  Obtaining and displaying information about running Stata instances and closing Stata instances in Microsoft Windows. 
 
 __Table of Contents__
 1. [Syntax](#1-syntax)
 2. [Options](#2-options)
 3. [Description](#3-description)
-4. [Stored Values](#4-storedvalues)
+4. [Stored Values](#4-stored)
 5. [Examples](#5-examples)
 6. [About](#6-about)
 

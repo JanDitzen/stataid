@@ -5,7 +5,7 @@ __Table of Contents__
 1. [Syntax](#1-syntax)
 2. [Options](#2-options)
 3. [Description](#3-description)
-4. [Stored Values](#4-stored)
+4. [Stored Values](#4-stored-values)
 5. [Examples](#5-examples)
 6. [About](#6-about)
 

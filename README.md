@@ -1,37 +1,102 @@
-## Welcome to GitHub Pages
+# stataid 
+##  Obtaining and displaying information about running Stata instances and closing Stata instances under Microsoft Windows. 
 
-You can use the [editor on GitHub](https://github.com/JanDitzen/stataid/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+__Table of Contents__
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+__Table of Contents__
+1. [Syntax](#1-syntax)
+2. [Options](#2-options)
+3. [Description](#3-description)
+4. [Stored Values](#4-storedvalues)
+5. [Examples](#5-examples)
+6. [About](#6-about)
 
-### Markdown
+# 1. Syntax
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+To obtain information about running Stata instances:
 
-```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+```
+stataid list , [exename(_string_) list mata ]
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+To close a running Stata instance using a Windows process id:
 
-### Jekyll Themes
+```
+stataid kill, id(_idnumber_)
+```
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/JanDitzen/stataid/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+# 2. Options
 
-### Support or Contact
+**exename(_string_)** Name of Stata executable.  **stataid** tries to determine the name of the executable, but might fail in case the executable has a non standard name.
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+**mata** Saves the data in a mata matrix called _stataid_.
+
+**kill(_idnumber_)** Kills process with specific id number.
+
+
+# 3. Description
+
+**stataid** obtains information about all running Stata processes of a Microsoft Windows system. It retrieves the running tasks using **shell** and tasklist of the command line. The following information are saved: 
+
+1. Name of the exe file (image name)
+
+2. Process id
+
+3. The name of the session
+
+4. The number of the session
+
+5. Memory used
+
+6. The status
+
+7. The username
+
+8. CPU time
+
+9. Windowtitle
+
+**stataid** can close any Stata instance, including the running one. Using the parameter **kill**, it closes the Stata instance defined by **id()**. Internally **stataid** uses the Windows command line command _taskkil_ to kill the Stata instance. 
+
+Note, Stata is closed _**without**_ saving any data!
+
+# 4. Stored Values
+
+**stataid** stores the following in **r()**:
+
+Scalars:
+
+**r(instances)** Number of Stata instances (only with **stataid list**).
+
+# 5. Examples
+
+To retrieve a list of all current running Stata instances (2 are running and list the result):
+
+```
+stata stataid list
+```
+
+The output will be:
+
+```
+. stataid list
+Obtaining number of Stata instances running under StataSE-64.exe.
+2 Stata instance(s) running.
+```
+
+Kill Stata instance with id _13424_:
+
+```
+. stataid kill , id(13424)
+CPU process id 13424 going to be closed.
+```
+
+# 6. About
+
+Jan Ditzen (Heriot-Watt University)
+
+Email: j.ditzen@hw.ac.uk
+
+Web: www.jan.ditzen.net
+
+This version: 1.0

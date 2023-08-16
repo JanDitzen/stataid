@@ -1,4 +1,7 @@
 # stataid 
+
+![version](https://img.shields.io/github/v/release/janditzen/stataid) ![release](https://img.shields.io/github/release-date/janditzen/stataid)
+
 ##  Obtaining and displaying information about running Stata instances and closing Stata instances in Microsoft Windows. 
 
 __Table of Contents__
